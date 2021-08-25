@@ -223,56 +223,58 @@ while True:
         janela_dif.hide()
         janela_dif_f = janela_facil()
     if window == janela_dif_f and event == 'Enviar':
-        if type(values['Valor']) != int:
-            janela_dif_f.hide()
-            janela_error=janela_erro()
-        elif values['Valor']<1 or values['Valor']>10:
+        try:
+            if int(values['Valor'])<1 or int(values['Valor'])>10:
+                janela_dif_f.hide()
+                janela_error = janela_erro()
+            else:
+                if values['Valor'] == gera_aleatorio(1):
+                    janela_dif_f.hide()
+                    janela_ac = janela_acertou()
+                else:
+                    janela_dif_f.hide()
+                    janela_er = janela_errou()
+        except:
             janela_dif_f.hide()
             janela_error = janela_erro()
-        else:
-            if values['Valor'] == gera_aleatorio(1):
-                janela_dif_f.hide()
-                janela_ac = janela_acertou()
-            else:
-                janela_dif_f.hide()
-                janela_er = janela_errou()
 
     if window == janela_dif and event == 'Médio':
         janela_dif.hide()
         janela_dif_m = janela_medio()
     if window == janela_dif_m and event == 'Enviar':
-        if type(values['Valor']) != int:
-            janela_dif_m.hide()
-            janela_error=janela_erro()
-        elif values['Valor'] < 1 or values['Valor'] > 50:
+        try:
+            if int(values['Valor'])<1 or int(values['Valor'])>50:
+                janela_dif_m.hide()
+                janela_error = janela_erro()
+            else:
+                if values['Valor'] == gera_aleatorio(2):
+                    janela_dif_m.hide()
+                    janela_ac = janela_acertou()
+                else:
+                    janela_dif_m.hide()
+                    janela_er = janela_errou()
+        except:
             janela_dif_m.hide()
             janela_error = janela_erro()
-        else:
-            if values['Valor'] == gera_aleatorio(2):
-                janela_dif_m.hide()
-                janela_ac = janela_acertou()
-            else:
-                janela_dif_m.hide()
-                janela_er = janela_errou()
 
     if window == janela_dif and event == 'Difícil':
         janela_dif.hide()
         janela_dif_d = janela_dificil()
     if window == janela_dif_d and event == 'Enviar':
-        if type(values['Valor']) != int:
-            janela_dif_d.hide()
-            janela_error=janela_erro()
-        elif values['Valor']<1 or values['Valor']>100:
+        try:
+            if int(values['Valor'])< 1 or int(values['Valor']) > 100:
+                janela_dif_d.hide()
+                janela_error = janela_erro()
+            else:
+                if values['Valor'] == gera_aleatorio(3):
+                    janela_dif_d.hide()
+                    janela_ac = janela_acertou()
+                else:
+                    janela_dif_d.hide()
+                    janela_er = janela_errou()
+        except:
             janela_dif_d.hide()
             janela_error = janela_erro()
-        else:
-            if values['Valor'] == gera_aleatorio(3):
-                janela_dif_d.hide()
-                janela_ac = janela_acertou()
-            else:
-                janela_dif_d.hide()
-                janela_er = janela_errou()
-
 
     if window == janela_er and event == 'Recomeçar':
         janela_er.hide()
